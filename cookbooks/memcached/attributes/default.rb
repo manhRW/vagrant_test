@@ -1,0 +1,1 @@
+default['memcached']['version'] = nil

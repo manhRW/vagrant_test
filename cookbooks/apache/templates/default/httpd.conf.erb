@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+    ServerName testapache.local
+
+    DocumentRoot /vagrant/codeigniter
+
+    <Directory /vagrant/codeigniter>
+        Options FollowSymLinks MultiViews
+        DirectoryIndex index.html index.htm index.php
+        AllowOverride None
+        Order Deny,Allow
+        Allow from all
+        EnableMMAP Off
+        EnableSendfile Off
+    </Directory>
+
+    <Directory /usr/share/phpmyadmin>
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    ## CodeIgniter enviornment name
+    setEnv CI_ENV vagrant
+</VirtualHost>
