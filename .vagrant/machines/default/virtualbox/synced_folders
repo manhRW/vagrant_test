@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/manh/manh/kenshu/vagrant_test","disabled":false},"v-csc-956cdf409":{"id":"v-csc-956cdf409","guestpath":"/tmp/vagrant-chef/fd0e4e1727818c925527256c9e53fe5a/cookbooks","hostpath":"/Users/manh/manh/kenshu/vagrant_test/cookbooks","disabled":false}}}

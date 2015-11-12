@@ -4,6 +4,7 @@ while [ 1 ]
 do  
     sudo tac /var/log/httpd/access_log > log.txt
     file="log.txt"
+    time=`date +"%T"`
     if [ $time == "23:59:59" ]
     then
         get_login=0
@@ -12,7 +13,6 @@ do
         post_register=0
         get_homepage=0
         post_homepage=0
-        time=`date +"%T"`
 
         while IFS= read -r line 
         do

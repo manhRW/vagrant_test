@@ -1,6 +1,7 @@
 <VirtualHost *:80>
     ServerName testapache.local
-
+    php_value date.timezone "Asia/Tokyo"
+    
     DocumentRoot /vagrant/codeigniter
 
     <Directory /vagrant/codeigniter>
