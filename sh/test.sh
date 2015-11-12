@@ -13,6 +13,7 @@ do
         post_register=0
         get_homepage=0
         post_homepage=0
+        date=`date +"%d"`
 
         while IFS= read -r line 
         do
