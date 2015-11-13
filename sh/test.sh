@@ -8,7 +8,7 @@ while :
 do  
     sudo tac /var/log/httpd/access_log > log.txt
     file="log.txt"
-    time=`date +"%T"`
+    time=$(date +"%T")
     if [ $time == "23:59:59" ]
     then
         get_login=0
@@ -17,8 +17,8 @@ do
         post_register=0
         get_homepage=0
         post_homepage=0
-        day=`date +"%d"`
-        date=`date +"%d/%b/%Y"`
+        day=$(date +"%d")
+        date=$(date +"%d/%b/%Y")
         while IFS= read -r line 
         do
             if [[ $line != *"$day"* ]]
@@ -28,22 +28,22 @@ do
 
             case "$line" in
                 *GET*login*) 
-                    get_login=`expr $get_login + 1`
+                    get_login=$($get_login + 1)
                             ;;
                     *POST*login*)
-                    post_login=`expr $post_login + 1`
+                    post_login=$($post_login + 1)
                     ;;
                         *GET*register*)
-                    get_register=`expr $get_register + 1`
+                    get_register=$($get_register + 1)
                     ;;
                         *POST*register*)
-                    post_register=`expr $post_register + 1`
+                    post_register=$($post_register + 1)
                     ;;
                 *GET*homepage*)
-                    get_homepage=`expr $get_homepage + 1`
+                    get_homepage=$($get_homepage + 1)
                     ;;
                 *POST*homepage*)
-                    post_homepage=`expr $post_homepage + 1`
+                    post_homepage=$($post_homepage + 1)
                     ;;
                 esac
         done < "$file"        
