@@ -16,5 +16,5 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "memcached"
     chef.add_recipe "postfix"
   end
-  
+  config.vm.provision "shell", path: "sh/test.sh"
 end
