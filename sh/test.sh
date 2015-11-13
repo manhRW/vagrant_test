@@ -1,7 +1,7 @@
 #!/bin/bash
 start_time=$(date +%s)
 check_time=$(date -d "23:59:59" +%s)
-sleep_time=$(( check_time - start_time ))
+sleep_time=$(( $check_time - $start_time ))
 sleep $sleep_time
 
 while :
