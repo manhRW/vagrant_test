@@ -8,7 +8,7 @@
 #
 execute "disable selinux enforcement" do
   only_if "selinuxenabled"
-  command "setenforce 0"
+  command "/usr/sbin/setenforce 0"
   action :run
 end
 
