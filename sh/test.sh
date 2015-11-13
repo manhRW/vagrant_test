@@ -30,13 +30,13 @@ do
                 *GET*login*) 
                     get_login=$($get_login + 1)
                             ;;
-                    *POST*login*)
+                *POST*login*)
                     post_login=$($post_login + 1)
                     ;;
-                        *GET*register*)
+                *GET*register*)
                     get_register=$($get_register + 1)
                     ;;
-                        *POST*register*)
+                *POST*register*)
                     post_register=$($post_register + 1)
                     ;;
                 *GET*homepage*)
