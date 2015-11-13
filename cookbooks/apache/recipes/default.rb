@@ -15,13 +15,6 @@ service "httpd" do
   action [ :enable, :start ]
 end
 
-execute "welcome.conf.back" do
-  command "mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.back"
-  only_if {
-    File.exists?("/etc/httpd/conf.d/welcome.conf")
-  }
-end
-
 service 'iptables' do
   action :stop
 end

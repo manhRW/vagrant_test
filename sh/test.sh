@@ -1,6 +1,6 @@
 #!/bin/bash
 su - vagrant
-while [ 1 ]
+while :
 do  
     sudo tac /var/log/httpd/access_log > log.txt
     file="log.txt"

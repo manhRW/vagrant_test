@@ -13,7 +13,7 @@
 end
 
 template "/etc/php.ini" do
-  source "php.init.erb"
+  source "php.ini.erb"
   owner "root"
   group "root"
   mode "0644"
