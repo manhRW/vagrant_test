@@ -1,6 +1,6 @@
 #!/bin/bash
-start_time=$(date +%s)
-check_time=$(date -d "23:59:59" +%s)
+start_time=$(date +"%s")
+check_time=$(date -d "23:59:59" +"%s")
 sleep_time=$(( $check_time - $start_time ))
 sleep $sleep_time
 
@@ -29,7 +29,7 @@ do
             case "$line" in
                 *GET*login*) 
                     get_login=$($get_login + 1)
-                            ;;
+                    ;;
                 *POST*login*)
                     post_login=$($post_login + 1)
                     ;;
