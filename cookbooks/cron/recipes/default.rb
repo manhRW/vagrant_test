@@ -10,14 +10,14 @@ package "vixie-cron" do
   action :install
 end
 
-service "crond" do
-  supports :status => true, :restart => true, :reload => true
-  action [ :enable, :start ]
-end
-
 template "/var/spool/cron/vagrant" do
   source "vagrant.erb"
   owner "vagrant"
   group "root"
   mode "0600"
+end
+
+service "crond" do
+  supports :status => true, :restart => true, :reload => true
+  action [ :enable, :start ]
 end
