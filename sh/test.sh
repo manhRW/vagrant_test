@@ -1,11 +1,12 @@
 #!/bin/bash
 sudo tac /var/log/httpd/access_log > log.txt
 
-regex="(POST|GET) /index.php/twitter/(register|login|homepage)"
+regex="(POST|GET) /index.php/twitter/([^/]+) "
 file="log.txt"
 
 day=$(date +"%d")
 date=$(date +"%d/%b/%Y")
+> test.txt
 
 while IFS= read -r line 
 do
