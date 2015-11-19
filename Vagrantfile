@@ -8,13 +8,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "chef_solo" do |chef|
     chef.install = false
     chef.cookbooks_path = "cookbooks"
-    chef.add_recipe "selinux"
-    chef.add_recipe "apache"
-    chef.add_recipe "php53"
-    chef.add_recipe "mysql"
-    chef.add_recipe "phpmyadmin"
-    chef.add_recipe "memcached"
-    chef.add_recipe "postfix"
+    chef.roles_path = "roles"
+    chef.add_role "testapache"
   end
-  config.vm.provision "shell", path: "sh/test.sh"
 end
