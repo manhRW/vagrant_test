@@ -12,26 +12,27 @@
   end
 end
 
-bash "install memcached" do 
+bash "install memcached" do
+  user "root"
   code <<-EOH
     cd /usr/local/src
-    sudo wget https://launchpad.net/libmemcached/1.0/1.0.4/+download/libmemcached-1.0.4.tar.gz --no-check-certificate
-    sudo tar xf libmemcached-1.0.4.tar.gz
+    wget https://launchpad.net/libmemcached/1.0/1.0.4/+download/libmemcached-1.0.4.tar.gz --no-check-certificate
+    tar xf libmemcached-1.0.4.tar.gz
     cd libmemcached-1.0.4
     sudo ./configure --prefix=/usr/local/libmemcached
-    sudo make
-    sudo make install
+    make
+    make install
     echo /usr/local/libmemcached/lib/ > /etc/ld.so.conf.d/libmemcached.conf
     sudo /sbin/ldconfig -v
-    sudo pecl channel-update pecl.php.net
-    sudo pecl download memcached
-    sudo tar xf memcached*.tgz
+    pecl channel-update pecl.php.net
+    pecl download memcached
+    tar xf memcached*.tgz
     cd memcached*
-    sudo phpize
+    phpize
     sudo ./configure --with-libmemcached-dir=/usr/local/libmemcached/
-    sudo make
-    sudo make install
-    sudo /etc/init.d/httpd restart
-    sudo /etc/init.d/memcached restart
+    make
+    make install
+    /etc/init.d/httpd restart
+    /etc/init.d/memcached restart
     EOH
 end

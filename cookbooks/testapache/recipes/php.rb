@@ -1,2 +1,2 @@
 include_recipe "php53"
-incldue_recipe "phpmyadmin"
+include_recipe "phpmyadmin"

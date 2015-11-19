@@ -27,7 +27,7 @@ user=mysql
 ;performance_schema
 
 ## Replication
-server-id                       =<%= node["mysql"]["server-id"] %>
+server-id                       =0
 log-bin                         =/var/lib/mysql/bin-log
 #relay-log                      =/var/lib/mysql/mysqllogs/relay-log
 expire-logs-days                =7
